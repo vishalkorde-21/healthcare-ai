@@ -21,7 +21,7 @@ function App() {
     try {
       const response = await axios.post(
         "http://127.0.0.1:8000/create/",
-        data
+        form
       );
       setResult(response.data);
     } catch (error) {
