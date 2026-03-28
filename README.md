@@ -30,8 +30,9 @@ npm start
 ## 🔗 API Endpoint
 POST: http://127.0.0.1:8000/create/
 
-## 📷 Demo
-(Attach video link here)
+## 📷 Demo video
+Watch here:
+https://drive.google.com/file/d/1JcUlBbcgyKtjZk7YaofDR26uJHCj81l8/view?usp=sharing
 
 ## 👨‍💻 Author
 Vishal Korde
