@@ -1,21 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./App.css";
 
 function App() {
   const [form, setForm] = useState({
     name: "",
     age: "",
-    symptoms: ""
+    symptoms: "",
   });
 
   const [result, setResult] = useState(null);
-
-  const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value
-    });
-  };
 
   const handleSubmit = async () => {
     try {
@@ -30,18 +24,36 @@ function App() {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div className="container">
       <h2>Healthcare AI</h2>
 
-      <input name="name" placeholder="Name" onChange={handleChange} /><br /><br />
-      <input name="age" placeholder="Age" onChange={handleChange} /><br /><br />
-      <input name="symptoms" placeholder="Symptoms" onChange={handleChange} /><br /><br />
+      <input
+        type="text"
+        placeholder="Name"
+        value={form.name}
+        onChange={(e) => setForm({ ...form, name: e.target.value })}
+      />
+
+      <input
+        type="number"
+        placeholder="Age"
+        value={form.age}
+        onChange={(e) => setForm({ ...form, age: e.target.value })}
+      />
+
+      <input
+        type="text"
+        placeholder="Symptoms"
+        value={form.symptoms}
+        onChange={(e) =>
+          setForm({ ...form, symptoms: e.target.value })
+        }
+      />
 
       <button onClick={handleSubmit}>Predict</button>
 
       {result && (
-        <div>
-          <h3>Result:</h3>
+        <div className="result">
           <p><b>Disease:</b> {result.diagnosis}</p>
           <p><b>Treatment:</b> {result.treatment}</p>
         </div>
